@@ -1,12 +1,13 @@
-import boto3
 import json
 import csv
+import boto3
+
 
 # Using the ServiceQuotas API get all services within a specific region
 def get_services():
 
     # TODO: Move file to a CDN and pull on first run, verify checksum and update if needed
-    with open("./resources/supported_services.csv", "r") as f:
+    with open("./resources/supported_services.csv", "r", encoding='UTF8') as f:
         reader = csv.reader(f)
         supported_services = [row[0] for row in reader][1:]
 
@@ -41,6 +42,7 @@ def get_resources(region):
                     {
                         "Type": resource_service,
                         "Name": name,
+                        "ARN": arn,
                     }
                 )
                 print(resource)
@@ -48,7 +50,7 @@ def get_resources(region):
     for resource in resources:
         print(resource)
 
-    with open("resources.json", "w") as f:
+    with open("resources.json", "w", encoding='UTF8') as f:
         json.dump(resources, f, indent=4)
 
     return resources

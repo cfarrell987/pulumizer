@@ -1,6 +1,5 @@
-from setuptools import setup, find_packages
-import os
 import sys
+from setuptools import setup, find_packages
 
 
 with open("README.md", "r", encoding="utf-8") as fh:
@@ -11,7 +10,7 @@ version = sys.version_info[:2]
 if version < (3, 8):
     print(
         "resources requires Python version 3.8 or later"
-        + " ({}.{}) detected.".format(*version)
+        + f" (you are using Python {version[0]}.{version[1]})."
     )
     sys.exit(-1)
 
