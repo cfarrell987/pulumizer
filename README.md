@@ -2,6 +2,8 @@
 
 Pulumizer or APC(AWS Pulumi Converter) is a tool used to create a json dump of all aws resources in a specified region
 
+[![Pylint](https://github.com/cfarrell987/pulumizer/actions/workflows/pylint.yml/badge.svg?branch=master&event=push)](https://github.com/cfarrell987/pulumizer/actions/workflows/pylint.yml)
+
 ## Requirements
 - [Pulumi](https://www.pulumi.com/docs/get-started/aws/begin/)
 - [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
