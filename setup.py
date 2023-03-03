@@ -22,7 +22,7 @@ install_requires = ["boto3", "json", "pulumi"]
 setup(
     name="Pulumizer",
     version=VERSION,
-    description="A Script to pull all resources in an AWS Account and convert to a Pulumi Bulk Import JSON",
+    description="A Script to pull all resources in a region and convert to Pulumi Bulk Import",
     long_description=long_description,
     author="Caleb Farrell",
     author_email="caleb.farrell@valhallahosting.com",
