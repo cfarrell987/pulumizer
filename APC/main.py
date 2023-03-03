@@ -1,5 +1,5 @@
 
-from aws import aws_dump
+from aws import aws_dump # pylint: disable=import-error
 
 if __name__ == "__main__":
     #TODO: Add support for multiple regions

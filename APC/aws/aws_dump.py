@@ -7,8 +7,8 @@ import boto3
 def get_services():
 
     # TODO: Move file to a CDN and pull on first run, verify checksum and update if needed
-    with open("./resources/supported_services.csv", "r", encoding='UTF8') as f:
-        reader = csv.reader(f)
+    with open("./resources/supported_services.csv", "r", encoding='UTF8') as file:
+        reader = csv.reader(file)
         supported_services = [row[0] for row in reader][1:]
 
     return supported_services
@@ -50,7 +50,7 @@ def get_resources(region):
     for resource in resources:
         print(resource)
 
-    with open("resources.json", "w", encoding='UTF8') as f:
-        json.dump(resources, f, indent=4)
+    with open("resources.json", "w", encoding='UTF8') as file:
+        json.dump(resources, file, indent=4)
 
     return resources
