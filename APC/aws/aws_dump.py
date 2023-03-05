@@ -34,8 +34,6 @@ def get_resources(region, profile):
             if response["PaginationToken"] == "":
                 logger.error("Pagination token is empty for: " + service)
                 break
-            else:
-                logger.info("Pagination token is not empty")
 
             for resource in response["ResourceTagMappingList"]:
                 main_service = resource["ResourceARN"].split(":")[2]
@@ -47,7 +45,7 @@ def get_resources(region, profile):
 
                 if name != "":
                     logger.info("No name tag found for resource: " + resource_id)
-                    pass
+
                 else:
                     logger.info("Name tag found for resource: " + resource_id)
                     name = resource["ResourceARN"].split(":")[-1].split("/")[-1]
