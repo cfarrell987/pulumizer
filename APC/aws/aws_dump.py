@@ -1,4 +1,3 @@
-import json
 import csv
 import boto3
 from tools import logger  # pylint: disable=import-error
